@@ -14,10 +14,16 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var lblCurrentHeading : UILabel!
     @IBOutlet var btnSubmit : UIButton!
-    @IBOutlet var lblAcquiringLocation : UILabel!
+//    @IBOutlet var lblAcquiringLocation : UILabel!
+    @IBOutlet var lblTimeRemaining : UILabel!
+    @IBOutlet var lblLocationName : UILabel!
+    @IBOutlet var imgArrow : UIImageView!
     
     var locationManager : CLLocationManager!
     var observer : NSObjectProtocol!
+    var currentLocation : CLLocation!
+    var calculatedHeading : Double!
+    var currentHeading : Double! = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +54,17 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Clicks
     
     @IBAction func clickSubmit() {
-        // TODO: Compare to proper heading and move on to Review
         performSegueWithIdentifier("GameToReview", sender: nil)
+    }
+    
+    @IBAction func changedSlider(slider: UISlider) {
+        // Update rotation of arrow
+        let angle = CGFloat(slider.value) * CGFloat(M_PI) / CGFloat(slider.maximumValue)
+        imgArrow.transform = CGAffineTransformMakeRotation(angle)
+        
+        // Update degrees
+        currentHeading = Double(slider.value)
+        lblCurrentHeading.text = String(format: "%.2f degrees", currentHeading)
     }
     
     // MARK: - Private
@@ -59,15 +74,22 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
             if ((error) != nil) {
                 println("Error acquiring locations: \(error)")
             } else {
-                let locs = JSON as! NSArray
-                let firstLoc = locs[0] as! NSArray
+                let locs = JSON as! [AnyObject]
+                let firstLoc = locs[0] as! [AnyObject]
                 
-                let firstLocID = firstLoc[0] as! NSInteger
-                let firstLocName = firstLoc[1] as! NSString
-                let firstLocAddress = firstLoc[2] as! NSString
-                let firstLocLat = firstLoc[3] as! CGFloat
-                let firstLocLng = firstLoc[4] as! CGFloat
-                let firstLocAlt = firstLoc[5] as! CGFloat
+                let firstLocID = firstLoc[0] as! Int
+                let firstLocName = firstLoc[1] as! String
+                let firstLocAddress = firstLoc[2] as! String
+                let firstLocLat = firstLoc[3] as! Double
+                let firstLocLng = firstLoc[4] as! Double
+                let firstLocAlt = firstLoc[5] as! Double
+                
+                self.lblLocationName.text = firstLocName
+                
+                var destCoord = CLLocationCoordinate2DMake(firstLocLat, firstLocLng)
+                var currentCoord = self.currentLocation.coordinate
+                self.calculatedHeading = self.getBearingBetweenTwoPoints1(currentCoord, point2: destCoord)
+                println("Calculated heading: \(self.calculatedHeading)")
                 
                 println("First loc: \(firstLocName) (\(firstLocLat), \(firstLocLng))")
             }
@@ -93,7 +115,6 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         print("New heading: \(newHeading.trueHeading)")
     }
     
-    // authorization status
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         var shouldIAllow = false
         
@@ -121,5 +142,43 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
             
             println("Denied access: \(locationStatus)")
         }
+    }
+    
+    // MARK: - Segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let reviewVC = segue.destinationViewController as! ReviewViewController
+        let headingDiff = abs(currentHeading - calculatedHeading)
+        println("Prepare for segue with heading diff: \(headingDiff)")
+        reviewVC.headingDiff = headingDiff
+    }
+    
+    // MARK: - Helper functions
+    
+    func degreesToRadians(degrees: Double) -> Double { return degrees * M_PI / 180.0 }
+    func radiansToDegrees(radians: Double) -> Double { return radians * 180.0 / M_PI }
+    
+    func getBearingBetweenTwoPoints1(point1 : CLLocationCoordinate2D, point2 : CLLocationCoordinate2D) -> Double {
+        // Credit where due: http://stackoverflow.com/questions/26998029/calculating-bearing-between-two-cllocation-points-in-swift
+        
+        let lat1 = degreesToRadians(point1.latitude)
+        let lon1 = degreesToRadians(point1.longitude)
+        
+        let lat2 = degreesToRadians(point2.latitude);
+        let lon2 = degreesToRadians(point2.longitude);
+        
+        let dLon = lon2 - lon1;
+        
+        let y = sin(dLon) * cos(lat2);
+        let x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dLon);
+        let radiansBearing = atan2(y, x);
+        
+        // Converting (-180, 0) to (180, 360)
+//        var degreesBearing = radiansToDegrees(radiansBearing)
+//        if (degreesBearing < 0) {
+//            degreesBearing += 360
+//        }
+        
+        return radiansToDegrees(radiansBearing)
     }
 }

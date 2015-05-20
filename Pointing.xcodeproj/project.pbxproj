@@ -17,6 +17,7 @@
 		D23062D21B0AF9E100AB935A /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23062D11B0AF9E100AB935A /* ReviewViewController.swift */; };
 		D23062E21B0B0D9B00AB935A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23062DB1B0B0D1800AB935A /* Alamofire.framework */; };
 		D23062E31B0B0D9B00AB935A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D23062DB1B0B0D1800AB935A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D2789B5A1B0C5941003F4320 /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = D2789B591B0C5941003F4320 /* arrow_up.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		D23062CF1B0AF9D500AB935A /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D23062D11B0AF9E100AB935A /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		D23062D31B0B0D1800AB935A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		D2789B591B0C5941003F4320 /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		D23062A21B0AF23200AB935A /* Pointing */ = {
 			isa = PBXGroup;
 			children = (
+				D2789B531B0C58FD003F4320 /* Images */,
 				D23062C51B0AF2F500AB935A /* ViewControllers */,
 				D23062A51B0AF23300AB935A /* AppDelegate.swift */,
 				D23062AC1B0AF23300AB935A /* Images.xcassets */,
@@ -189,6 +192,14 @@
 				D23062E11B0B0D1800AB935A /* Alamofire OSX Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D2789B531B0C58FD003F4320 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D2789B591B0C5941003F4320 /* arrow_up.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +323,7 @@
 			files = (
 				D23062CE1B0AF87600AB935A /* Main.storyboard in Resources */,
 				D23062B01B0AF23300AB935A /* LaunchScreen.xib in Resources */,
+				D2789B5A1B0C5941003F4320 /* arrow_up.png in Resources */,
 				D23062AD1B0AF23300AB935A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

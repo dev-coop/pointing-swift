@@ -9,14 +9,25 @@
 import UIKit
 
 class ReviewViewController: UIViewController {
+    
+    @IBOutlet var lblOffBy : UILabel!
+    
+    var headingDiff : Double!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
+        lblOffBy.text = String(format: "You were off by %.2f degrees", headingDiff)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Clicks
+    
+    @IBAction func clickToHome() {
+        navigationController?.popToRootViewControllerAnimated(true)
     }
     
 

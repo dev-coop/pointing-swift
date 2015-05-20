@@ -15,6 +15,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var btnStartGame : UIButton!
     
     var locationManager : CLLocationManager!
+    var currentLocation : CLLocation!
+    var isAuthorized : Bool! = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +29,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        locationManager.requestWhenInUseAuthorization()
         lblAcquiringLocation.hidden = false
         btnStartGame.hidden = true
+        if (isAuthorized == true) {
+            locationManager.startUpdatingLocation()
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -60,8 +66,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var locationArray = locations as NSArray
-        var locationObj = locationArray.lastObject as! CLLocation
-        var coord = locationObj.coordinate
+        currentLocation = locationArray.lastObject as! CLLocation
+        var coord = currentLocation.coordinate
         println("New location: \(coord.latitude), \(coord.longitude)")
         
         locationManager.stopUpdatingLocation()
@@ -73,10 +79,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         print("New heading: \(newHeading.trueHeading)")
     }
     
-    // authorization status
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        var shouldIAllow = false
-        
         var locationStatus : NSString = "Not determined"
         
         switch status {
@@ -88,10 +91,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             locationStatus = "Status not determined"
         default:
             locationStatus = "Allowed to location Access"
-            shouldIAllow = true
+            self.isAuthorized = true
         }
         
-        if (shouldIAllow == true) {
+        if (isAuthorized == true) {
             println("Location is Allowed")
             locationManager.startUpdatingLocation()
         } else {
@@ -101,5 +104,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             
             println("Denied access: \(locationStatus)")
         }
+    }
+    
+    // MARK: - Segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let gameVC = segue.destinationViewController as! GameViewController
+        gameVC.currentLocation = currentLocation
     }
 }

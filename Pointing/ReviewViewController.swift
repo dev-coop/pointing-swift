@@ -17,7 +17,10 @@ class ReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        lblOffBy.text = String(format: "You were off by %.2f degrees", headingDiff)
+        if (abs(headingDiff)) > 180 {
+            headingDiff = abs(headingDiff) - 360
+        }
+        lblOffBy.text = String(format: "You were off by %.2f degrees", abs(headingDiff))
     }
     
     override func didReceiveMemoryWarning() {

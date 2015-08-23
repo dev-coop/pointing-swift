@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,37 +10,33 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Upper Left Labs. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="8" y="410" width="464" height="50"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Q3P-D1-Wlm">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="cAV-HM-ePH">
+                    <rect key="frame" x="90" y="66" width="300" height="347"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="GZl-CD-ui5"/>
+                        <constraint firstAttribute="width" constant="300" id="EKD-ca-Sar"/>
+                        <constraint firstAttribute="height" constant="347" id="yb3-f2-75p"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pointing" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="8" y="218" width="464" height="43"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="43" id="Cbq-0N-cYs"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="638-h7-cPD"/>
-                <constraint firstAttribute="trailing" secondItem="8ie-xW-0ye" secondAttribute="trailing" constant="8" id="7h1-ao-p7E"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="PfW-vR-J8q"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="WlF-2u-u8t"/>
-                <constraint firstAttribute="trailing" secondItem="kId-c2-rCX" secondAttribute="trailing" constant="8" id="n3n-ge-iiu"/>
-                <constraint firstAttribute="centerY" secondItem="kId-c2-rCX" secondAttribute="centerY" id="r4L-rb-oTB"/>
+                <constraint firstAttribute="trailing" secondItem="Q3P-D1-Wlm" secondAttribute="trailing" id="3DU-ME-RAX"/>
+                <constraint firstItem="Q3P-D1-Wlm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Dwd-Uf-tkj"/>
+                <constraint firstAttribute="centerX" secondItem="cAV-HM-ePH" secondAttribute="centerX" id="Huy-iP-wpV"/>
+                <constraint firstAttribute="bottom" secondItem="Q3P-D1-Wlm" secondAttribute="bottom" id="KzX-ff-JBs"/>
+                <constraint firstItem="Q3P-D1-Wlm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YQ3-rv-ZQZ"/>
+                <constraint firstAttribute="centerY" secondItem="cAV-HM-ePH" secondAttribute="centerY" id="niV-VV-AoW"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="app_background.jpg" width="320" height="546"/>
+        <image name="splash_image.png" width="300" height="347"/>
+    </resources>
 </document>

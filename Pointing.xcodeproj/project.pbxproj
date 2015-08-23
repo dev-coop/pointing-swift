@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4278A201B8A887500387ABD /* arrow-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4278A1F1B8A887500387ABD /* arrow-white@2x.png */; };
+		B4278A251B8A8A0C00387ABD /* compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4278A241B8A8A0C00387ABD /* compass@2x.png */; };
 		D23062A61B0AF23300AB935A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23062A51B0AF23300AB935A /* AppDelegate.swift */; };
 		D23062AD1B0AF23300AB935A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23062AC1B0AF23300AB935A /* Images.xcassets */; };
 		D23062B01B0AF23300AB935A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23062AE1B0AF23300AB935A /* LaunchScreen.xib */; };
@@ -87,6 +89,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B4278A1F1B8A887500387ABD /* arrow-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-white@2x.png"; path = "../../../Dropbox/Projects/Pointing/ios-assets/PSD-assets/scaled-at-200/arrow-white@2x.png"; sourceTree = "<group>"; };
+		B4278A241B8A8A0C00387ABD /* compass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "compass@2x.png"; path = "../../../Dropbox/Projects/Pointing/ios-assets/compass/scaled-at-200/compass@2x.png"; sourceTree = "<group>"; };
 		D23062A01B0AF23200AB935A /* Pointing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pointing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23062A41B0AF23300AB935A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D23062A51B0AF23300AB935A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,7 +219,9 @@
 				D260DB4C1B8A6EDF00A47FAF /* done_text@2x.png */,
 				D260DB4D1B8A6EDF00A47FAF /* menu_icon@2x.png */,
 				D260DB4E1B8A6EDF00A47FAF /* next_text@2x.png */,
+				B4278A1F1B8A887500387ABD /* arrow-white@2x.png */,
 				D260DB4F1B8A6EDF00A47FAF /* pointer@2x.png */,
+				B4278A241B8A8A0C00387ABD /* compass@2x.png */,
 				D260DB501B8A6EDF00A47FAF /* splash_image@2x.png */,
 				D260DB511B8A6EDF00A47FAF /* there_text@2x.png */,
 				D2789B591B0C5941003F4320 /* arrow_up.png */,
@@ -346,6 +352,8 @@
 				D260DB551B8A6EDF00A47FAF /* next_text@2x.png in Resources */,
 				D260DB571B8A6EDF00A47FAF /* splash_image@2x.png in Resources */,
 				D260DB521B8A6EDF00A47FAF /* app_background@2x.jpg in Resources */,
+				B4278A251B8A8A0C00387ABD /* compass@2x.png in Resources */,
+				B4278A201B8A887500387ABD /* arrow-white@2x.png in Resources */,
 				D23062CE1B0AF87600AB935A /* Main.storyboard in Resources */,
 				D23062B01B0AF23300AB935A /* LaunchScreen.xib in Resources */,
 				D260DB541B8A6EDF00A47FAF /* menu_icon@2x.png in Resources */,

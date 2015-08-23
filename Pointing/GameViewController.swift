@@ -75,14 +75,14 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
                 println("Error acquiring locations: \(error)")
             } else {
                 let locs = JSON as! [AnyObject]
-                let firstLoc = locs[0] as! [AnyObject]
+                let firstLoc = locs[0]
                 
-                let firstLocID = firstLoc[0] as! Int
-                let firstLocName = firstLoc[1] as! String
-                let firstLocAddress = firstLoc[2] as! String
-                let firstLocLat = firstLoc[3] as! Double
-                let firstLocLng = firstLoc[4] as! Double
-                let firstLocAlt = firstLoc[5] as! Double
+                let firstLocID      = firstLoc["id"] as! Int
+                let firstLocName    = firstLoc["name"] as! String
+                let firstLocAddress = firstLoc["address"] as! String
+                let firstLocLat     = firstLoc["lat"] as! Double
+                let firstLocLng     = firstLoc["lng"] as! Double
+                let firstLocAlt     = firstLoc["elevation"] as! Double
                 
                 self.lblLocationName.text = firstLocName
                 

@@ -31,7 +31,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         navigationItem.hidesBackButton = true
         initLocationManager()
         acquireLocationToCompare()
-        mySlider.hidden = true
+//      mySlider.hidden = true
         
     }
     
@@ -73,7 +73,9 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Private
     
     func acquireLocationToCompare() {
-        Alamofire.request(.GET, "http://api.getpointing.com/v1/locations").responseJSON(options: .AllowFragments) { (request, response, JSON, error) -> Void in
+        var currentCoord = self.currentLocation.coordinate
+        var url = "http://api.getpointing.com/v1/locations?lat=\(currentCoord.latitude)&lng=\(currentCoord.longitude)"
+        Alamofire.request(.GET, url).responseJSON(options: .AllowFragments) { (request, response, JSON, error) -> Void in
             if ((error) != nil) {
                 println("Error acquiring locations: \(error)")
             } else {
@@ -90,10 +92,9 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
                 self.lblLocationName.text = firstLocName
                 
                 var destCoord = CLLocationCoordinate2DMake(firstLocLat, firstLocLng)
-                var currentCoord = self.currentLocation.coordinate
                 self.calculatedHeading = self.getBearingBetweenTwoPoints1(currentCoord, point2: destCoord)
+                println("coorentCoord: \(currentCoord.latitude)")
                 println("Calculated heading: \(self.calculatedHeading)")
-                
                 println("First loc: \(firstLocName) (\(firstLocLat), \(firstLocLng))")
             }
         }
@@ -116,10 +117,9 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
 //      print("New heading: \(newHeading.trueHeading)")
-        var myIntValue:CGFloat = CGFloat(newHeading.trueHeading)
         let angle = CGFloat(newHeading.trueHeading) * CGFloat(M_PI) / CGFloat(360)
-        print("Rotate to: \(myIntValue)")
         imgArrow.transform = CGAffineTransformMakeRotation(angle)
+        currentHeading = newHeading.trueHeading
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {

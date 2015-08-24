@@ -26,6 +26,12 @@
 	<string>Location is needed to determine which direction other locations are from you.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location is needed to determine which direction other locations are from you.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Kalam-Regular.ttf</string>
+		<string>Kalam-Light.ttf</string>
+		<string>Kalam-Bold.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

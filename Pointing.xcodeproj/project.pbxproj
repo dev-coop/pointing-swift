@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		B4278A201B8A887500387ABD /* arrow-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4278A1F1B8A887500387ABD /* arrow-white@2x.png */; };
 		B4278A251B8A8A0C00387ABD /* compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4278A241B8A8A0C00387ABD /* compass@2x.png */; };
+		B42DE29F1B8B923700F4F936 /* Kalam-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B42DE29B1B8B90D500F4F936 /* Kalam-Bold.ttf */; };
+		B42DE2A01B8B923B00F4F936 /* Kalam-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B42DE29D1B8B90D500F4F936 /* Kalam-Regular.ttf */; };
+		B42DE2A11B8B923F00F4F936 /* Kalam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B42DE29C1B8B90D500F4F936 /* Kalam-Light.ttf */; };
+		B42DE2A31B8B9ED400F4F936 /* puppy-win@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B42DE2A21B8B9ED400F4F936 /* puppy-win@2x.png */; };
+		B42DE2A51B8BA19300F4F936 /* puppy-fail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B42DE2A41B8BA19300F4F936 /* puppy-fail@2x.png */; };
 		D23062A61B0AF23300AB935A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23062A51B0AF23300AB935A /* AppDelegate.swift */; };
 		D23062AD1B0AF23300AB935A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23062AC1B0AF23300AB935A /* Images.xcassets */; };
 		D23062B01B0AF23300AB935A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23062AE1B0AF23300AB935A /* LaunchScreen.xib */; };
@@ -23,7 +28,6 @@
 		D260DB531B8A6EDF00A47FAF /* done_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D260DB4C1B8A6EDF00A47FAF /* done_text@2x.png */; };
 		D260DB541B8A6EDF00A47FAF /* menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D260DB4D1B8A6EDF00A47FAF /* menu_icon@2x.png */; };
 		D260DB551B8A6EDF00A47FAF /* next_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D260DB4E1B8A6EDF00A47FAF /* next_text@2x.png */; };
-		D260DB561B8A6EDF00A47FAF /* pointer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D260DB4F1B8A6EDF00A47FAF /* pointer@2x.png */; };
 		D260DB571B8A6EDF00A47FAF /* splash_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D260DB501B8A6EDF00A47FAF /* splash_image@2x.png */; };
 		D260DB581B8A6EDF00A47FAF /* there_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D260DB511B8A6EDF00A47FAF /* there_text@2x.png */; };
 		D2789B5A1B0C5941003F4320 /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = D2789B591B0C5941003F4320 /* arrow_up.png */; };
@@ -91,6 +95,11 @@
 /* Begin PBXFileReference section */
 		B4278A1F1B8A887500387ABD /* arrow-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-white@2x.png"; path = "../../../Dropbox/Projects/Pointing/ios-assets/PSD-assets/scaled-at-200/arrow-white@2x.png"; sourceTree = "<group>"; };
 		B4278A241B8A8A0C00387ABD /* compass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "compass@2x.png"; path = "../../../Dropbox/Projects/Pointing/ios-assets/compass/scaled-at-200/compass@2x.png"; sourceTree = "<group>"; };
+		B42DE29B1B8B90D500F4F936 /* Kalam-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Kalam-Bold.ttf"; path = "../../../Dropbox/Projects/Pointing/Fonts/Kalam/Kalam-Bold.ttf"; sourceTree = "<group>"; };
+		B42DE29C1B8B90D500F4F936 /* Kalam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Kalam-Light.ttf"; path = "../../../Dropbox/Projects/Pointing/Fonts/Kalam/Kalam-Light.ttf"; sourceTree = "<group>"; };
+		B42DE29D1B8B90D500F4F936 /* Kalam-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Kalam-Regular.ttf"; path = "../../../Dropbox/Projects/Pointing/Fonts/Kalam/Kalam-Regular.ttf"; sourceTree = "<group>"; };
+		B42DE2A21B8B9ED400F4F936 /* puppy-win@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "puppy-win@2x.png"; path = "../../../Dropbox/Projects/Pointing/ios-assets/puppy-win-assets/scaled-at-200/puppy-win@2x.png"; sourceTree = "<group>"; };
+		B42DE2A41B8BA19300F4F936 /* puppy-fail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "puppy-fail@2x.png"; path = "../../../Dropbox/Projects/Pointing/ios-assets/puppy-fail-assets/scaled-at-200/puppy-fail@2x.png"; sourceTree = "<group>"; };
 		D23062A01B0AF23200AB935A /* Pointing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pointing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23062A41B0AF23300AB935A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D23062A51B0AF23300AB935A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +117,6 @@
 		D260DB4C1B8A6EDF00A47FAF /* done_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done_text@2x.png"; sourceTree = "<group>"; };
 		D260DB4D1B8A6EDF00A47FAF /* menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon@2x.png"; sourceTree = "<group>"; };
 		D260DB4E1B8A6EDF00A47FAF /* next_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next_text@2x.png"; sourceTree = "<group>"; };
-		D260DB4F1B8A6EDF00A47FAF /* pointer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pointer@2x.png"; sourceTree = "<group>"; };
 		D260DB501B8A6EDF00A47FAF /* splash_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_image@2x.png"; sourceTree = "<group>"; };
 		D260DB511B8A6EDF00A47FAF /* there_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "there_text@2x.png"; sourceTree = "<group>"; };
 		D2789B591B0C5941003F4320 /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
@@ -133,6 +141,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B42DE29E1B8B90E100F4F936 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B42DE29B1B8B90D500F4F936 /* Kalam-Bold.ttf */,
+				B42DE29C1B8B90D500F4F936 /* Kalam-Light.ttf */,
+				B42DE29D1B8B90D500F4F936 /* Kalam-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		D23062971B0AF23200AB935A = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +187,7 @@
 		D23062A31B0AF23300AB935A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B42DE29E1B8B90E100F4F936 /* Fonts */,
 				D23062A41B0AF23300AB935A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -218,9 +237,10 @@
 				D260DB4B1B8A6EDF00A47FAF /* app_background@2x.jpg */,
 				D260DB4C1B8A6EDF00A47FAF /* done_text@2x.png */,
 				D260DB4D1B8A6EDF00A47FAF /* menu_icon@2x.png */,
+				B42DE2A21B8B9ED400F4F936 /* puppy-win@2x.png */,
+				B42DE2A41B8BA19300F4F936 /* puppy-fail@2x.png */,
 				D260DB4E1B8A6EDF00A47FAF /* next_text@2x.png */,
 				B4278A1F1B8A887500387ABD /* arrow-white@2x.png */,
-				D260DB4F1B8A6EDF00A47FAF /* pointer@2x.png */,
 				B4278A241B8A8A0C00387ABD /* compass@2x.png */,
 				D260DB501B8A6EDF00A47FAF /* splash_image@2x.png */,
 				D260DB511B8A6EDF00A47FAF /* there_text@2x.png */,
@@ -354,10 +374,14 @@
 				D260DB521B8A6EDF00A47FAF /* app_background@2x.jpg in Resources */,
 				B4278A251B8A8A0C00387ABD /* compass@2x.png in Resources */,
 				B4278A201B8A887500387ABD /* arrow-white@2x.png in Resources */,
+				B42DE2A31B8B9ED400F4F936 /* puppy-win@2x.png in Resources */,
+				B42DE2A11B8B923F00F4F936 /* Kalam-Light.ttf in Resources */,
+				B42DE2A51B8BA19300F4F936 /* puppy-fail@2x.png in Resources */,
+				B42DE2A01B8B923B00F4F936 /* Kalam-Regular.ttf in Resources */,
 				D23062CE1B0AF87600AB935A /* Main.storyboard in Resources */,
 				D23062B01B0AF23300AB935A /* LaunchScreen.xib in Resources */,
 				D260DB541B8A6EDF00A47FAF /* menu_icon@2x.png in Resources */,
-				D260DB561B8A6EDF00A47FAF /* pointer@2x.png in Resources */,
+				B42DE29F1B8B923700F4F936 /* Kalam-Bold.ttf in Resources */,
 				D260DB531B8A6EDF00A47FAF /* done_text@2x.png in Resources */,
 				D2789B5A1B0C5941003F4320 /* arrow_up.png in Resources */,
 				D23062AD1B0AF23300AB935A /* Images.xcassets in Resources */,

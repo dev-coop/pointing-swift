@@ -12,6 +12,7 @@ import Alamofire
 
 class GameViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var mySlider: UISlider!
     @IBOutlet var lblCurrentHeading : UILabel!
     @IBOutlet var btnSubmit : UIButton!
 //    @IBOutlet var lblAcquiringLocation : UILabel!
@@ -30,6 +31,8 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         navigationItem.hidesBackButton = true
         initLocationManager()
         acquireLocationToCompare()
+        mySlider.hidden = true
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -112,7 +115,11 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
-        print("New heading: \(newHeading.trueHeading)")
+//      print("New heading: \(newHeading.trueHeading)")
+        var myIntValue:CGFloat = CGFloat(newHeading.trueHeading)
+        let angle = CGFloat(newHeading.trueHeading) * CGFloat(M_PI) / CGFloat(360)
+        print("Rotate to: \(myIntValue)")
+        imgArrow.transform = CGAffineTransformMakeRotation(angle)
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {

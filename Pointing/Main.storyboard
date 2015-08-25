@@ -113,15 +113,6 @@
                                     <action selector="changedSlider:" destination="SDQ-26-8wS" eventType="valueChanged" id="wpg-ZK-zpN"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5v-3l-f1e">
-                                <rect key="frame" x="16" y="173" width="568" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="3Dx-eD-peY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Kalam-Bold" family="Kalam" pointSize="29"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 °" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GZ-sM-AlY">
                                 <rect key="frame" x="169" y="394" width="263" height="21"/>
                                 <constraints>
@@ -157,6 +148,15 @@
                                     <constraint firstAttribute="width" constant="36" id="Omj-zs-K9S"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5v-3l-f1e">
+                                <rect key="frame" x="182" y="173" width="236" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3Dx-eD-peY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kalam-Bold" family="Kalam" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeE-0x-vrY">
                                 <rect key="frame" x="0.0" y="484" width="600" height="116"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -195,7 +195,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nnn.n °" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXf-4P-Pab">
-                                <rect key="frame" x="16" y="241" width="568" height="21"/>
+                                <rect key="frame" x="16" y="263" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -205,8 +205,8 @@
                         <constraints>
                             <constraint firstItem="Z8t-cv-bhb" firstAttribute="top" secondItem="UWp-fX-KYf" secondAttribute="bottom" constant="66" id="2Ka-9K-XRW"/>
                             <constraint firstItem="vo6-Iu-BDF" firstAttribute="top" secondItem="WeE-0x-vrY" secondAttribute="bottom" id="2ZZ-fN-PKD"/>
-                            <constraint firstItem="PXf-4P-Pab" firstAttribute="leading" secondItem="a5v-3l-f1e" secondAttribute="leading" id="47h-Hy-Rtf"/>
-                            <constraint firstItem="PXf-4P-Pab" firstAttribute="trailing" secondItem="a5v-3l-f1e" secondAttribute="trailing" id="4LJ-iS-TjC"/>
+                            <constraint firstItem="PXf-4P-Pab" firstAttribute="leading" secondItem="a5v-3l-f1e" secondAttribute="leading" constant="-166" id="47h-Hy-Rtf"/>
+                            <constraint firstItem="PXf-4P-Pab" firstAttribute="trailing" secondItem="a5v-3l-f1e" secondAttribute="trailing" constant="166" id="4LJ-iS-TjC"/>
                             <constraint firstItem="WbE-q9-Ad5" firstAttribute="centerX" secondItem="F8q-Rv-yhV" secondAttribute="centerX" id="8f2-r5-EYr"/>
                             <constraint firstAttribute="centerX" secondItem="WeE-0x-vrY" secondAttribute="centerX" id="92I-yQ-CTf"/>
                             <constraint firstItem="F8q-Rv-yhV" firstAttribute="trailing" secondItem="PXf-4P-Pab" secondAttribute="trailing" id="9sq-YG-w0U"/>
@@ -218,7 +218,7 @@
                             <constraint firstAttribute="centerX" secondItem="WbE-q9-Ad5" secondAttribute="centerX" id="F69-pC-nV4"/>
                             <constraint firstItem="VAT-Az-o20" firstAttribute="centerX" secondItem="a5v-3l-f1e" secondAttribute="centerX" id="Feh-k0-Q3U"/>
                             <constraint firstItem="WeE-0x-vrY" firstAttribute="top" secondItem="WbE-q9-Ad5" secondAttribute="bottom" constant="17" id="IMk-aZ-j2R"/>
-                            <constraint firstItem="a5v-3l-f1e" firstAttribute="leading" secondItem="ibg-zA-hxi" secondAttribute="leadingMargin" id="Idw-en-N57"/>
+                            <constraint firstItem="a5v-3l-f1e" firstAttribute="leading" secondItem="ibg-zA-hxi" secondAttribute="leadingMargin" constant="166" id="Idw-en-N57"/>
                             <constraint firstItem="3GZ-sM-AlY" firstAttribute="top" secondItem="F8q-Rv-yhV" secondAttribute="bottom" constant="8" symbolic="YES" id="Pe5-74-yEO"/>
                             <constraint firstItem="ahs-9f-4x9" firstAttribute="leading" secondItem="WeE-0x-vrY" secondAttribute="leading" id="TF3-iy-mYw"/>
                             <constraint firstItem="F8q-Rv-yhV" firstAttribute="leading" secondItem="PXf-4P-Pab" secondAttribute="leading" id="WVu-N0-nnK"/>
@@ -233,7 +233,7 @@
                             <constraint firstItem="a5v-3l-f1e" firstAttribute="centerY" secondItem="UWp-fX-KYf" secondAttribute="centerY" id="evj-Ef-NHO"/>
                             <constraint firstAttribute="centerX" secondItem="3GZ-sM-AlY" secondAttribute="centerX" id="gYC-5S-6Vo"/>
                             <constraint firstItem="VAT-Az-o20" firstAttribute="top" secondItem="lUL-iu-6MO" secondAttribute="bottom" constant="50" id="geE-If-Lgo"/>
-                            <constraint firstItem="PXf-4P-Pab" firstAttribute="top" secondItem="a5v-3l-f1e" secondAttribute="bottom" constant="8" symbolic="YES" id="hnn-ma-4DB"/>
+                            <constraint firstItem="PXf-4P-Pab" firstAttribute="top" secondItem="a5v-3l-f1e" secondAttribute="bottom" constant="30" id="hnn-ma-4DB"/>
                             <constraint firstItem="ahs-9f-4x9" firstAttribute="leading" secondItem="ibg-zA-hxi" secondAttribute="leading" id="hwe-Xc-C8V"/>
                             <constraint firstAttribute="centerY" secondItem="UWp-fX-KYf" secondAttribute="centerY" constant="97.5" id="iNU-D9-xeS"/>
                             <constraint firstItem="Z8t-cv-bhb" firstAttribute="centerX" secondItem="WbE-q9-Ad5" secondAttribute="centerX" id="jfj-xL-UPf"/>
@@ -244,10 +244,12 @@
                             <constraint firstItem="ahs-9f-4x9" firstAttribute="top" secondItem="lUL-iu-6MO" secondAttribute="bottom" constant="-20" id="sAg-BT-Ul8"/>
                             <constraint firstAttribute="centerX" secondItem="3GZ-sM-AlY" secondAttribute="centerX" id="tQx-1t-RJS"/>
                             <constraint firstAttribute="centerX" secondItem="UWp-fX-KYf" secondAttribute="centerX" id="vMx-q4-XSh"/>
+                            <constraint firstItem="a5v-3l-f1e" firstAttribute="width" secondItem="UWp-fX-KYf" secondAttribute="width" constant="-27" id="ysM-HQ-k4H"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="oIG-QE-Z3x"/>
+                                <exclude reference="Idw-en-N57"/>
                                 <exclude reference="Feh-k0-Q3U"/>
                                 <exclude reference="X2l-Fu-BdC"/>
                                 <exclude reference="YLF-vi-OSh"/>

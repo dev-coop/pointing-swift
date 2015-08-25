@@ -14,6 +14,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var mySlider: UISlider!
     @IBOutlet var lblCurrentHeading : UILabel!
+    @IBOutlet var lblSliderHeading : UILabel!
     @IBOutlet var btnSubmit : UIButton!
 //    @IBOutlet var lblAcquiringLocation : UILabel!
     @IBOutlet var lblTimeRemaining : UILabel!
@@ -67,7 +68,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         
         // Update degrees
         currentHeading = Double(slider.value)
-        lblCurrentHeading.text = String(format: "%.2f degrees", currentHeading)
+        lblSliderHeading.text = String(format: "%.1f °", currentHeading)
     }
     
     // MARK: - Private
@@ -80,7 +81,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
                 println("Error acquiring locations: \(error)")
             } else {
                 let locs = JSON as! [AnyObject]
-                let firstLoc = locs[0]
+                let firstLoc: AnyObject = locs[0]
                 
                 let firstLocID      = firstLoc["id"] as! Int
                 let firstLocName    = firstLoc["name"] as! String
@@ -118,8 +119,9 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
 //      print("New heading: \(newHeading.trueHeading)")
         let angle = CGFloat(newHeading.trueHeading) * CGFloat(M_PI) / CGFloat(360)
-        imgArrow.transform = CGAffineTransformMakeRotation(angle)
+        imgArrow.transform = CGAffineTransformMakeRotation(angle*2)
         currentHeading = newHeading.trueHeading
+        lblCurrentHeading.text = String(format: "%.1f °", currentHeading)
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -158,6 +160,8 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         let headingDiff = abs(currentHeading - calculatedHeading)
         println("Prepare for segue with heading diff: \(headingDiff)")
         reviewVC.headingDiff = headingDiff
+        reviewVC.currentLocation = currentLocation
+
     }
     
     // MARK: - Helper functions

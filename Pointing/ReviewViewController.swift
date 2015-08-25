@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ReviewViewController: UIViewController {
     
     @IBOutlet var lblOffBy : UILabel!
     
     var headingDiff : Double!
-
+    var currentLocation : CLLocation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
@@ -30,7 +32,12 @@ class ReviewViewController: UIViewController {
     // MARK: - Clicks
     
     @IBAction func clickToHome() {
-        navigationController?.popToRootViewControllerAnimated(true)
+        performSegueWithIdentifier("NextLevel", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let gameVC = segue.destinationViewController as! GameViewController
+        gameVC.currentLocation = currentLocation
     }
     
 

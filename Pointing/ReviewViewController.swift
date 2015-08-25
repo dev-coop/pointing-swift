@@ -29,12 +29,7 @@ class ReviewViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - Clicks
-    
-    @IBAction func clickToHome() {
-        performSegueWithIdentifier("NextLevel", sender: nil)
-    }
-    
+    // Next button
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let gameVC = segue.destinationViewController as! GameViewController
         gameVC.currentLocation = currentLocation

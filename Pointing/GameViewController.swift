@@ -10,13 +10,14 @@ import UIKit
 import CoreLocation
 import Alamofire
 
+let maxHealth = 100
+
 class GameViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var mySlider: UISlider!
     @IBOutlet var lblCurrentHeading : UILabel!
     @IBOutlet var lblSliderHeading : UILabel!
     @IBOutlet var btnSubmit : UIButton!
-//    @IBOutlet var lblAcquiringLocation : UILabel!
     @IBOutlet var lblTimeRemaining : UILabel!
     @IBOutlet var lblLocationName : UILabel!
     @IBOutlet var imgArrow : UIImageView!
@@ -26,6 +27,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     var currentLocation : CLLocation!
     var calculatedHeading : Double!
     var currentHeading : Double! = 0
+    var playerHealth : Int! = maxHealth
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -161,7 +163,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         println("Prepare for segue with heading diff: \(headingDiff)")
         reviewVC.headingDiff = headingDiff
         reviewVC.currentLocation = currentLocation
-
+        reviewVC.playerHealth = playerHealth
     }
     
     // MARK: - Helper functions
